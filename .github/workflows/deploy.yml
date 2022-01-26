@@ -81,7 +81,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: ${{ secrets.ECS_APP_CONTAINER_NAME }}
+          container-name: laravel-app
           image: ${{ steps.build-image.outputs.appimage }}
 
       - name: Fill in the new nginx image ID in the Amazon ECS task definition
@@ -89,7 +89,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: ${{ steps.app-task-def.outputs.task-definition }}
-          container-name: ${{ secrets.ECS_NGINX_CONTAINER_NAME }}
+          container-name: laravel-nginx
           image: ${{ steps.build-image.outputs.webimage }} 
 
       - name: Deploy Amazon ECS task definition
