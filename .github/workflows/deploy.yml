@@ -57,8 +57,8 @@ jobs:
           IMAGE_TAG: latest
         run: |
           docker-compose build
-          docker tag larvel-nginx:latest $ECR_REGISTRY/larvel-nginx:$IMAGE_TAG
-          docker tag larvel-app:latest $ECR_REGISTRY/larvel-app:$IMAGE_TAG
+          docker tag laravel-nginx:latest $ECR_REGISTRY/laravel-nginx:$IMAGE_TAG
+          docker tag laravel-app:latest $ECR_REGISTRY/laravel-app:$IMAGE_TAG
           docker push $ECR_REGISTRY/laravel-nginx:$IMAGE_TAG
           docker push $ECR_REGISTRY/laravel-app:$IMAGE_TAG
           echo "setting output values"
