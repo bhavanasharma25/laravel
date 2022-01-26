@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: larvel-app
+    image: laravel-app
     container_name: laravel-app
     restart: unless-stopped
     environment:
@@ -20,7 +20,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_Nginx
-    image: larvel-nginx 
+    image: laravel-nginx 
     container_name: webserver 
     restart: unless-stopped
     ports:
