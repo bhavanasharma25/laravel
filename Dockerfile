@@ -25,7 +25,7 @@ RUN apk add autoconf && pecl install -o -f redis \
 && rm -rf /tmp/pear \
 && docker-php-ext-enable redis && apk del autoconf
 
-COPY ./config/php/local.ini /usr/local/etc/php/conf.d/local.ini
+COPY ./config/php.ini /usr/local/etc/php/
 
 RUN addgroup -g 655 -S www && \
     adduser -u 655 -S www -G www
